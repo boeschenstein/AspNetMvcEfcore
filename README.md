@@ -3,7 +3,7 @@
 Based on <https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-5.0>
 but EF is in a separate assembly
 
-## Start
+## Option 1: Original - all in 1 project
 
 - create now ASP.NET MVC Web app: AspNetMvcEfcore.WebApp
 - add an Class Library assembly which contains EF Core: AspNetMvcEfcore.Data
@@ -14,7 +14,9 @@ but EF is in a separate assembly
 
 The `Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore` NuGet package provides ASP.NET Core middleware for EF Core error pages. This middleware helps to detect and diagnose errors with EF Core migrations.
 
-## Separate project for ef
+## Option 2: Separate project for ef (data)
+
+> Serivice is optional (TODO: implement Repository pattern in Service assembly)
 
 `dotnet new mvc --name ContosoUniversity`
 `dotnet new classlib --name ContosoUniversity.Data`
